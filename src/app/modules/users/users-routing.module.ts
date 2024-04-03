@@ -9,6 +9,7 @@ import { UserContentComponent } from './user-content/user-content.component';
 import { CoursesComponent } from './courses/courses.component';
 import { NotesComponent } from './notes/notes.component';
 import { ShowVideoComponent } from './show-video/show-video.component';
+import { SubscribedCoursesComponent } from './subscribed-courses/subscribed-courses.component';
 
 const routes: Routes = [
   {
@@ -27,8 +28,12 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        redirectTo:'Courses',
+        redirectTo:'allCourses',
         pathMatch:'full'
+      },
+      {
+        path:'subCourses',
+        component:SubscribedCoursesComponent
       },
       {
         path:'',

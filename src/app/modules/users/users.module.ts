@@ -13,6 +13,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { NotesComponent } from './notes/notes.component';
 import { ShowVideoComponent } from './show-video/show-video.component';
 import { SharedModule } from '../shared/shared.module';
+import { SubscribedCoursesComponent } from './subscribed-courses/subscribed-courses.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { SharedModule } from '../shared/shared.module';
     UserContentComponent,
     CoursesComponent,
     NotesComponent,
-    ShowVideoComponent
+    ShowVideoComponent,
+    SubscribedCoursesComponent,
+    
   ],
   imports: [
     CommonModule,
