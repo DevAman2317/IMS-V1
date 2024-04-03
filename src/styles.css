@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .clr{
+      color: rgb(5, 84, 116) !important;
+    }
+  .bg-clr{
+      background-color: rgb(5, 84, 116) !important;
+  }
+  .nav-link:hover{
+    color: rgb(5, 84, 116); 
+    font-weight: 600;
+  
+  }
+  .nav-link:visited{
+    color: rgb(5, 84, 116);
+    font-weight: 600;
+  
+  }
+  .nav-link{
+    font-weight: 600;
+  }
+
+  .light-bg{
+   background-color: rgba(5, 85, 116, 0.13) !important;
+  }
+  
+
+  .min-height{
+        min-height: 370px !important;
+        overflow-y: scroll !important;
+        /* color: red; */
+  }
+ 
+.max-height{
+  max-height:395 !important; 
+  overflow-y: scroll !important;
+  
+}
+
+  .main-heading{
+    border-radius: 0px 100% 100% 0%;
+  }
+
+
+  .down-from-header{
+    margin-top: 120px !important;
+  }
+
+  .height{
+    min-height: 430px;
+  }

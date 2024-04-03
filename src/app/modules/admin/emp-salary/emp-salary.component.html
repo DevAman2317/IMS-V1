@@ -1,0 +1,96 @@
+
+<table class="table table-striped text-center ">
+    <thead class="table-dark " >
+        <tr >
+            <th>Sr.No.</th>
+            <th >User Name</th>
+            <th>Course</th>
+            <th>Fees History</th>         
+        </tr>
+    </thead>
+    <tbody >
+        <tr>
+            <td>1</td>
+            <td >Aman Kamble</td>
+            
+            <td>FrontEnd Developer</td>
+            <td class="col-2" ><app-my-buttons button="View History" data-toggle="modal" data-target="#feesHistoryModal" ></app-my-buttons></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td >Vaibhav Chandrashekhar</td>
+            
+            <td>FullStack Developer</td>
+            <td class="col-2" ><app-my-buttons button="View History" data-toggle="modal" data-target="#feesHistoryModal" ></app-my-buttons></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td >Gganesh Sable</td>
+            
+            <td>UX UI Developer</td>
+            <td class="col-2" ><app-my-buttons button="View History" data-toggle="modal" data-target="#feesHistoryModal" ></app-my-buttons></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td >Raju Chandrashekhar</td>
+            
+            <td>FrontEnd Developer</td>
+            <td class="col-2" ><app-my-buttons button="View History" data-toggle="modal" data-target="#feesHistoryModal"></app-my-buttons></td>
+        </tr>
+
+    </tbody>
+</table> 
+
+
+
+
+<!-- ====================================FEES HISTORY MODEL====================================================== -->
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="feesHistoryModal" tabindex="-1" role="dialog" aria-labelledby="feesHistoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title clr h3 fw-bolder" id="feesHistoryModalLabel ">Fees History</h5>
+          <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Your fees details content goes here -->
+          <p>Here you can display the fees details...</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Installment No.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Example rows -->
+              <tr>
+                <td>2023-01-01</td>
+                <td>$100</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2023-02-01</td>
+                <td>$150</td>
+                <td>2</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer d-flex align-center d-grid ">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
