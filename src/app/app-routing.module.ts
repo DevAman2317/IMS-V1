@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserRegistrationFormComponent } from './modules/auth/user-registration-form/user-registration-form.component';
-import { HomeContentComponent } from './Dashboard/home-content/home-content.component';
-import { AboutUsComponent } from './Dashboard/about-us/about-us.component';
-import { ContactComponent } from './Dashboard/contact/contact.component';
-import { ProfessorsComponent } from './Dashboard/professors/professors.component';
-import { LatestAchievementComponent } from './Dashboard/latest-achievement/latest-achievement.component';
+import { UserRegistrationFormComponent } from './pages/auth/user-registration-form/user-registration-form.component';
+import { HomeContentComponent } from './dashboard/home-content/home-content.component';
+import { AboutUsComponent } from './dashboard/about-us/about-us.component';
+import { ContactComponent } from './dashboard/contact/contact.component';
+import { ProfessorsComponent } from './dashboard/professors/professors.component';
+import { LatestAchievementComponent } from './dashboard/latest-achievement/latest-achievement.component';
 
 
 
@@ -37,11 +37,11 @@ const routes: Routes = [
   
   {
     path:'user',
-    loadChildren:()=> import('./modules/users/users.module').then(m=>m.UsersModule)
+    loadChildren:()=> import('./pages/users/users.module').then(m=>m.UsersModule)
   },
   {
-    path:'admin', canActivate:[],
-    loadChildren:()=> import('./modules/admin/admin.module').then(m=>m.AdminModule)
+    path:'admin',
+    loadChildren:()=> import('./pages/admin/admin.module').then(m=>m.AdminModule)
   }
 ];
 

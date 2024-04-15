@@ -1,0 +1,21 @@
+<div class="container gy-3">
+    <form [formGroup]="userForm" (ngSubmit)="updateForm()">
+        <div>
+          <label class="form-label">First Name:</label>
+          <input class="form-control" type="text" formControlName="firstName">
+        </div>
+        <div>
+          <label class="form-label">Last Name:</label>
+          <input class="form-control" type="text" formControlName="lastName">
+        </div>
+        <div>
+          <label class="form-label">Email:</label>
+          <input class="form-control" type="email" formControlName="email">
+        </div>
+        <!-- Add more form controls here -->
+        
+        <button type="submit" class="btn btn-success my-3" [disabled]="userForm.invalid">Submit</button>
+      </form>
+      
+</div>
+update works
