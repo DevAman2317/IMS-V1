@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/core/myServices/auth/login.service';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  constructor(private router:Router ,  private ser:LoginService){
 
-
+  }
+signout(){
+  // const token=localStorage.getItem('authToken')
+  localStorage.clear(); 
+  this.router.navigate(['home'])
+}
 }

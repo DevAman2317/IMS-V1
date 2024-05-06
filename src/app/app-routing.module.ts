@@ -12,9 +12,16 @@ import { LatestAchievementComponent } from './dashboard/latest-achievement/lates
 
  
 const routes: Routes = [
+
   {
-    path:'',component:HomeContentComponent
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
   },
+{
+  path:'home',
+ component:HomeContentComponent
+},
   {
     path:'about',
     component:AboutUsComponent
