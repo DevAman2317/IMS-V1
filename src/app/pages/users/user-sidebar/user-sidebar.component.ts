@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-sidebar.component.css']
 })
 export class UserSidebarComponent {
+ 
+constructor(){
+  
+}
+courseName:any
 
 }
+

@@ -11,11 +11,17 @@ export class GetAllUsersService {
     this.getAllUsers()
   }
 
-   
+   UserName:any
   
 
   getAllUsers(){
     return this.http.get(`${constantAPI.Endpoint.allUsers}v1/users`)
+  }
+  getUserById(id:any){
+    return this.http.get(`${constantAPI.Endpoint.allUsers}/v1/users/${id}`)
+  }
+  deleteUser(id:number){
+    return this.http.delete(`${constantAPI.Endpoint.allUsers}/v1`)
   }
   // updateUser(){
   //   return this.http.

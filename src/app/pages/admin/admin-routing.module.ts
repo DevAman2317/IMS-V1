@@ -44,6 +44,7 @@ const routes: Routes = [
           path:'Users',
           component:UserListComponent
         },
+     
         {
           path:'update/:user_id',
           component:UpdateUserComponent

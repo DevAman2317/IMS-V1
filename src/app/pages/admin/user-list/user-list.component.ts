@@ -16,7 +16,13 @@ export class UserListComponent {
         this.getUsers.getAllUsers().subscribe((res:any)=>{
           this.UserData = res.body
           console.log(this.UserData)
+          this.getUsers.UserName=res.body.first_name
           // console.log(this.Userdata)
+          console.log(this.getUsers.UserName)
         })
+      }
+
+      deleteUser(){
+        
       }
 }

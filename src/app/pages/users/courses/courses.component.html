@@ -1,84 +1,30 @@
 <div class="container py-3">
-  <div class="row">
+  <div class="row" >
     <!-- Card 1 -->
-    <div class="col-lg-4 col-sm-10 col-md-5 ">
-      <div class="card text-center">
+   
+    <div class="col-lg-4 col-sm-10 col-md-5 my-2" *ngFor="let item of response">
+      <div class="card text-center ">
         <img src="https://d3lzcn6mbbadaf.cloudfront.net/media/details/msbshse_july28.jpg" class="card-img-top img-thumbnail " alt="Image 1">
         <div class="card-body">
-          <h5 class="card-title fw-bolder clr">SSC</h5>
+          <h5 class="card-title fw-bolder clr">{{item.course_name}}</h5>
+          <p class="card-text">Course Duration: {{item.course_duration}}</p>
+          <h4 class="card-text fw-bold text-primary">Course Fees: {{item.course_fees}}</h4>
           <p class="card-text">Get Notes And video Lecture click on the Get Details button</p>
-          <a href="#" class="btn bg-clr text-white" [routerLink]="'../notes'">Get Details</a>
+          <a href="#" class="btn bg-clr text-white" [routerLink]="'../notes'">Buy Now!</a>
         </div>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="col-lg-4 col-sm-10 col-md-5">
-      <div class="card text-center  ">
-        <img src="https://www.pw.live/exams/wp-content/uploads/2024/02/MAHARASHTRA-HSC-PREPARATION-TIPS--jpg.webp" class="card-img-top img-thumbnail"
-          alt="Image 1">
-        <div class="card-body">
-          <h5 class="card-title fw-bolder clr">HSC</h5>
-          <p class="card-text">Subscribe this course and Get Notes And video Lecture click on the Get Details button</p>
-          <a href="#" class="btn bg-clr text-white">Get Details</a>
-        </div>
-      </div>
-    </div>
-
-
-     <!-- Card 3 -->
-     <div class="col-lg-4 col-sm-10 col-md-5">
-      <div class="card text-center w-80 my-2">
-        <img
-          src="https://theshillongtimes.com/wp-content/uploads/2020/10/NEET-logo.jpg"
-          class="card-img-top img-thumbail" alt="Image 1">
-        <div class="card-body">
-          <h5 class="card-title fw-bolder clr">NEET</h5>
-          <p class="card-text">Subscribe this course and  Get Notes And video Lecture click on the Get Details button</p>
-          <a href="#" class="btn bg-clr text-white">Get Details</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-<div class="row">
-  
    
 
 
+    
 
-
-  <!-- Card 4 -->
-  <div class="col-lg-4 col-sm-10 col-md-5">
-    <div class="card text-center w-80 my-2">
-      <img
-        src="https://static.theprint.in/wp-content/uploads/2022/03/xxcsdcsd2022031012283320220310140153.jpg?compress=true&quality=80&w=800&dpr=1"
-        class="card-img-top img-thumbail" alt="Image 1">
-      <div class="card-body">
-        <h5 class="card-title fw-bolder clr">JEE</h5>
-        <p class="card-text">Subscribe this course and Get Notes And video Lecture click on the Get Details button</p>
-        <a href="#" class="btn bg-clr text-white">Get Details</a>
-      </div>
-    </div>
   </div>
 
-  <!-- card 5 -->
-  <div class="col-lg-4 col-sm-10 col-md-5">
-    <div class="card text-center w-80 my-2">
-      <img
-        src="https://imgeng.jagran.com/images/2021/aug/mht1630302046568.jpg"
-        class="card-img-top img-thumbail" alt="Image 1">
-      <div class="card-body">
-        <h5 class="card-title fw-bolder clr">MHT-CET</h5>
-        <p class="card-text"> Subscribe this course and Get Notes And video Lecture click on the Get Details button</p>
-        <a href="#" class="btn bg-clr text-white">Get Details</a>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
 </div>
   
 

@@ -22,7 +22,7 @@ import { SharedModule } from '../shared/shared.module';
     AdminSidebarComponent,
     AdminContentComponent,
     AdminCoursesComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
   ],
   imports: [
     CommonModule,
