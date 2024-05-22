@@ -1,0 +1,42 @@
+<div class="container my-2  ">
+    <div class="row d-flex  justify-content-end">
+        
+        <div class="col-6  my-auto ">
+            
+                <div class="input-group ">
+                    <input class="form-control" [(ngModel)]="searchQuery"  type="text" placeholder="Search user..." id="searchInput" area-label="searchInput">
+                    <div class="input-group-append">
+
+                        <app-my-buttons button="Search"></app-my-buttons>
+
+                    </div>
+                </div>
+           
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <table class="table ">
+        <thead class="thead-dark text-center">
+            <tr>
+            <th>Revenue Id</th>
+            <th>Revenue Name</th>
+            <th>Update Revenue</th>
+            <th>Delete Revenue</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of revenueData|filterUsers:searchQuery">
+                <td>{{r.revenue_category_id}}</td>
+                <td>{{r.revenue_category_name}}</td>
+                <td class="text-center"><button class="btn btn-secondary"><i class="bi bi-pencil-square"  ></i >  Update</button></td>
+                <td class="text-center"><button class="btn btn-danger " >  <i class="bi bi-trash" > </i> Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

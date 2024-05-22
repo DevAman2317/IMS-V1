@@ -15,6 +15,7 @@ const routes: Routes = [
 
   {
     path:'',
+    
     redirectTo:'home',
     pathMatch:'full'
   },
@@ -34,7 +35,7 @@ const routes: Routes = [
     path:'professors',
     component:ProfessorsComponent
   },
-  {
+  { 
     path:'Achievement',
     component:LatestAchievementComponent
   },

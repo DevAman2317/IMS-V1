@@ -8,8 +8,9 @@ import { constantAPI } from 'src/app/core/constant/constantAPI';
 export class GetAllUsersService {
 
   constructor(private http:HttpClient) { 
-    this.getAllUsers()
+    
   }
+  searchQuery:any='';
 
    UserName:any
   
@@ -20,11 +21,45 @@ export class GetAllUsersService {
   getUserById(id:any){
     return this.http.get(`${constantAPI.Endpoint.allUsers}/v1/users/${id}`)
   }
-  deleteUser(id:number){
-    return this.http.delete(`${constantAPI.Endpoint.allUsers}/v1`)
-  }
+  // deleteUser(id:number){
+  //   return this.http.delete(`${constantAPI.Endpoint.allUsers}/v1`)
+  // }
   // updateUser(){
   //   return this.http.
   // }
+
+  getAllUsersRole(){
+    return this.http.get(`https://developerschool-backend.onrender.com/api/v1/urole/getAllRoles`)
+  }
+
+  getUserRoleById(id:number){
+    return this.http.get(`https://developerschool-backend.onrender.com/api/v1/urole/${id}`)
+  }
+
+  getallAdmin(){
+    return this.http.get(`https://developerschool-backend.onrender.com/api/v1/admin`)
+  }
+
+  getAllStudents(){
+    return this.http.get('https://developerschool-backend.onrender.com/api/v1/students')
+  }
+
+
+
+
+
+  getAdmin(){
+
+  }
+
+  getStudent(){
+
+  }
+  getTeacher(){
+
+  }
+  getGuest(){
+
+  }
 
 }

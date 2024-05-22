@@ -11,6 +11,8 @@ export class LoginService {
 baseUrl=`https://developerschool-backend.onrender.com/`
 
   constructor(private http:HttpClient) { }
+
+  
   loginService(body:any){
     return this.http.post(`${this.baseUrl}api/v1/urole/userlogin/`,body);
     
@@ -20,16 +22,15 @@ baseUrl=`https://developerschool-backend.onrender.com/`
   setToken(token:any, userRole:any){
     localStorage.setItem('authToken',token); 
     localStorage.setItem('userRole',userRole);
+    
     return true;
-    
-    
-   
-  }
+    }
+    getToken(){
+      localStorage.getItem('authToken')
+      return true
+    }
  
-  getToken(){
-    localStorage.getItem('authToken');
-    return true;
-  }
+
  getUserRoleById(id:number){
   return this.http.get(`${this.baseUrl}api/v1/urole/${id}`)
  }

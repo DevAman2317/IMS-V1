@@ -1,83 +1,40 @@
 
-<div class="container my-2 ">
-    <div class="row d-flex  justify-content-between">
-        <div class="col-3 ">
 
-            <div class="dropdown d-flex">
-                <button class="btn bg-clr text-white dropdown-toggle" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Filter Users
-                </button>
-                <div class="dropdown-menu" aria-labelledby="filterDropdown">
-                    <a class="dropdown-item" href="#" >Admin</a>
-                    <a class="dropdown-item" href="#" >Faculty</a>
-                    <a class="dropdown-item" href="#" >Student</a>
-                    <a class="dropdown-item" href="#" >Staff</a>
-                    <a class="dropdown-item" href="#" >All Users</a>
-                </div>
-                
-            </div>
+<div class="col-3 ">
+
+    <div class="dropdown d-flex">
+        <button  class="btn bg-clr text-white dropdown-toggle" type="button" id="filterDropdown"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filter Users
+        </button>
+        <div  id="role"  class="dropdown-menu" aria-labelledby="filterDropdown" >
+            <a class="dropdown-item"  [routerLink]="'./allUsers'">All Users</a>
+            <a class="dropdown-item" [routerLink]="'./adminList'" >Admin</a>
+            <a class="dropdown-item" [routerLink]="'./studentList'" >Student</a>
+            <a class="dropdown-item" [routerLink]="'./teachersList'" >Teacher</a>
+            <a class="dropdown-item"  >Faculty</a>
+            <a class="dropdown-item" >Guest</a>
         </div>
-        <div class="col-6  my-auto ">
-            <div class="input-group ">
-                <input type="text" class="form-control" placeholder="Search user..." id="searchInput">
-                <div class="input-group-append">
-                   
-                    <app-my-buttons button="Search" ></app-my-buttons>
 
-                </div>
-            </div>
-
-        </div>
     </div>
 </div>
-<!-- Dropdown menu for filtering users -->
-    
-    
-    
-    <!-- =======================filter searching dropdown end====================================== -->
-    <div class="container ">
+
+
+<div class="container ">
+
+        <router-outlet></router-outlet>
+  
+
+
+
+    <!-- =========================PAGINATION=========================================== -->
 
 
 
 
-
-<table class="table table-striped text-center  " >
-    <thead class="table-dark "  >
-        <tr>
-            <th>ID.No.</th>
-            <th >User Name</th>
-            <th>Contact</th>
-            <th>Qualification</th>     
-            <th >Update User</th>
-            <th >Delete User</th>    
-        </tr>
-    </thead>
-    <tbody >
-        <tr *ngFor="let U of UserData">
-            <td>{{U.user_id}}</td>
-            <td class="text-start" >{{U.first_name}} {{U.last_name}}</td>
-            
-            <td>{{U.contact}}</td>
-            <td>{{U.qualification}}</td>
-            <td><button class="btn btn-secondary" [routerLink]="['../update','user_id']">Update</button></td>
-            <td><button class="btn btn-danger ">Delete</button></td>
-        </tr>
-        
-       
-
-    </tbody>
-</table> 
-
-
-
-<!-- =========================PAGINATION=========================================== -->
-
-
-
-    
     <div class="container  mt-4">
         <nav aria-label="Page navigation d-flex justify-content-left">
-            <ul class="pagination justify-content-start me-auto   " >
+            <ul class="pagination justify-content-start me-auto   ">
                 <li class="page-item ">
                     <a class="page-link" href="#" aria-label="Previous">
                         <span aria-hidden="true">Privious &laquo;</span>
@@ -96,5 +53,3 @@
             </ul>
         </nav>
     </div>
-
-  

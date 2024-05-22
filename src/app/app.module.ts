@@ -12,6 +12,7 @@ import { AboutUsComponent } from './dashboard/about-us/about-us.component';
 import { ContactComponent } from './dashboard/contact/contact.component';
 import { ProfessorsComponent } from './dashboard/professors/professors.component';
 import { LatestAchievementComponent } from './dashboard/latest-achievement/latest-achievement.component';
+import { FilterPipe } from './shared/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import { LatestAchievementComponent } from './dashboard/latest-achievement/lates
     ContactComponent,
     ProfessorsComponent,
     LatestAchievementComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
     
   ],
   providers: [],

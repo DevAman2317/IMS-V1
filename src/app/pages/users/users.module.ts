@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
-import { UserListComponent } from '../admin/user-list/user-list.component';
 import { UserRegistrationFormComponent } from '../auth/user-registration-form/user-registration-form.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserAttendanceComponent } from './user-attendance/user-attendance.component';
@@ -17,7 +16,6 @@ import { SubscribedCoursesComponent } from './subscribed-courses/subscribed-cour
 
 @NgModule({
   declarations: [
-    UserListComponent,
     UserRegistrationFormComponent,
     UserHomeComponent,
     UserAttendanceComponent,

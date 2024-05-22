@@ -48,13 +48,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of userData|filterUsers:searchQuery" >
+            <tr *ngFor="let user of UserData|filterUsers:searchQuery" >
                 <td >{{user.user_id}}</td>
                 <td class="text-start">{{user.first_name}} {{user.last_name}}</td>
                 <td>{{user.contact}}</td>
                 <td>{{user.qualification}}</td>
-                <td><button class="btn btn-secondary" [routerLink]="['../update','user_id']"><i class="bi bi-pencil-square"  ></i>Update</button></td>
-                <td><button class="btn btn-danger " >  <i class="bi bi-trash" > </i>Delete</button></td>
+                <td><button class="btn btn-secondary" [routerLink]="['../update','user_id']"><i class="bi bi-pencil-square"  > </i>Update</button></td>
+                <td><button class="btn btn-danger " > <i class="bi bi-trash" > </i>Delete</button></td>
             </tr>
              <!-- (click)="deleteUser(UserData.user_id)"  -->
 

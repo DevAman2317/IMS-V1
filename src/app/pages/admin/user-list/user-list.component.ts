@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { GetAllUsersService } from 'src/app/core/myServices/user/getUsers/get-all-users.service';
+import { FilterPipe } from 'src/app/shared/pipe/filter.pipe';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-list',
@@ -7,22 +9,61 @@ import { GetAllUsersService } from 'src/app/core/myServices/user/getUsers/get-al
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
-  UserData:any
-      constructor(private getUsers:GetAllUsersService){
-        this.getUser()
-      }
+  UserData:any;
+   data:any=this.getUsers.searchQuery='';
+  userRoles:any;
+  selectedRoleId: any;
+      
 
-      getUser(){
-        this.getUsers.getAllUsers().subscribe((res:any)=>{
-          this.UserData = res.body
-          console.log(this.UserData)
-          this.getUsers.UserName=res.body.first_name
-          // console.log(this.Userdata)
-          console.log(this.getUsers.UserName)
-        })
-      }
-
-      deleteUser(){
+  constructor(private getUsers:GetAllUsersService){
         
+    this.getUserRole()
+  }
+
+      // deleteUser(id:number){
+      //   this.getUsers.deleteUser(id).subscribe((res:any)=>{console.log(res)
+
+          
+      // Swal.fire({
+      //   title: "Are you sure?",
+      //   text: "You won't be able to revert this!",
+      //   icon: "warning",
+      //   showCancelButton: true,
+      //   confirmButtonColor: "#3085d6",
+      //   cancelButtonColor: "#d33",
+      //   confirmButtonText: "Yes, delete it!"
+      // }).then((result) => {
+      //   if (result.isConfirmed) {
+      //     Swal.fire({
+      //       title: "Deleted!",
+      //       text: `${res.message}`,
+      //       icon: "success"
+            
+      //     });
+      //     location.reload();
+         
+      //   }
+      // });
+      //   })
+        
+      // }
+
+      
+
+
+      getUserRole(){
+        this.getUsers.getAllUsersRole().subscribe((res:any)=>{
+          // console.log(res);
+          this.userRoles=res
+          
+        })
+
       }
+
+
+
+    
+
+
+
 }
