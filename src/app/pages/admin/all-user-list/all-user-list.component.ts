@@ -12,22 +12,26 @@ export class AllUserListComponent {
 
   constructor(private getUsers:GetAllUsersService){
         
-    this.getUser()
+    // this.getUser()
   }
   
   UserData:any;
   searchQuery:any='';
   
-      
+      ngOnInIt(){
+        this.getUsers.getAllUsers().subscribe
+        ((res:any)=>{
+          this.UserData=res.body;
+        })
+      }
 
-
+ 
 
   getUser(){
     this.getUsers.getAllUsers().subscribe((res:any)=>{
-      this.UserData = res.body;
+      // this.UserData = res.body;
       // console.log(this.UserData)
       
-      // console.log(this.Userdata)
       
     })
   }

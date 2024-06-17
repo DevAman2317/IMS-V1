@@ -6,11 +6,12 @@
       <div class="card text-center ">
         <img src="https://d3lzcn6mbbadaf.cloudfront.net/media/details/msbshse_july28.jpg" class="card-img-top img-thumbnail " alt="Image 1">
         <div class="card-body">
-          <h5 class="card-title fw-bolder clr">{{item.course_name}}</h5>
+          <h5 class="card-title fw-bolder clr"  #courseName >{{item.course_name}}</h5>
+          <p class="card-text">course Id:{{item.course_id}}</p>
           <p class="card-text">Course Duration: {{item.course_duration}}</p>
           <h4 class="card-text fw-bold text-primary">Course Fees: {{item.course_fees}}</h4>
           <p class="card-text">Get Notes And video Lecture click on the Get Details button</p>
-          <a href="#" class="btn bg-clr text-white" [routerLink]="'../notes'">Buy Now!</a>
+          <button class="btn bg-clr text-white" data-toggle="modal" data-target="#buyCourse" (click)="patchValue(item.course_name,item.course_fees,item.course_id)" >Buy Now!</button>
         </div>
       </div>
     </div>
@@ -31,3 +32,61 @@
 
 
 
+
+
+<!-- //////////////////////////////////////model form ////////////////////// -->
+<div class="modal fade" id="buyCourse" tabindex="-1" role="dialog" aria-labelledby="addNewCourseLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title clr h3 fw-bolder" id="addNewCourseLabel "  >Buy Course</h5>
+        <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Your fees details content goes here -->
+        <p>Fill the form to buy course...</p>
+
+          <form [formGroup]="byCourse">
+            <div class="mb-3 form-control" >
+                <label for="course_name" class="form-label"  >Selected Course </label>
+                <input type="text" class="form-control"  id="course_name" readonly  formControlName="course_name" placeholder="Enter Course Name">
+              </div>
+              <div class="mb-3 form-control" >
+                <label for="course_name" class="form-label"  > Course id </label>
+                <input type="text" class="form-control"  id="course_name" readonly  formControlName="course_id" placeholder="Enter Course Name">
+              </div>
+              <div class="mb-3">
+                <label for="courseDuration" class="form-label"> Total Fees</label>
+                <input type="number" class="form-control" id="courseDuration" formControlName="total_fees" placeholder="Enter Course Duration in Month" readonly>
+              </div>
+             
+              <div class="mb-3">
+                <label for="CourseFees" class="form-label">Paid Fees</label>
+                <input type="number" class="form-control" id="courseFees" formControlName="paid_fees" placeholder="Enter Course Fees">
+              </div>
+              <div class="mb-3">
+                <label for="CourseFees" class="form-label">Transation Id</label>
+                <input type="number" class="form-control" id="courseFees" formControlName="transaction_id" placeholder="Enter Course Fees">
+              </div>
+              <div class="mb-3">
+                <label for="CourseFees" class="form-label">Amount</label>
+                <input type="number" class="form-control" id="courseFees" formControlName="amount" placeholder="Enter Course Fees">
+              </div>
+            
+              <div class="mb-3">
+                <label for="CourseFees" class="form-label">Revenue Category Id</label>
+                <input type="number" class="form-control" id="courseFees" formControlName="revenue_category_id" placeholder="Enter Course Fees">
+              </div>
+
+              <div class="modal-footer d-flex align-center d-grid ">
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="paidFees()" >Submit</button>
+              </div>
+          </form>
+      </div>
+      
+    </div>
+  </div>
+</div>

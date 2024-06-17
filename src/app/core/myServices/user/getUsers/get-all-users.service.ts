@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, observable } from 'rxjs';
 import { constantAPI } from 'src/app/core/constant/constantAPI';
 
 @Injectable({
@@ -15,7 +16,7 @@ export class GetAllUsersService {
    UserName:any
   
 
-  getAllUsers(){
+  getAllUsers():Observable<any>{
     return this.http.get(`${constantAPI.Endpoint.allUsers}v1/users`)
   }
   getUserById(id:any){
@@ -36,7 +37,7 @@ export class GetAllUsersService {
     return this.http.get(`https://developerschool-backend.onrender.com/api/v1/urole/${id}`)
   }
 
-  getallAdmin(){
+  getallAdmin():Observable<any>{
     return this.http.get(`https://developerschool-backend.onrender.com/api/v1/admin`)
   }
 

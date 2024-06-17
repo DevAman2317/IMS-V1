@@ -13,6 +13,7 @@ constructor(private userService:GetAllUsersService){
   this.getAdmin()
 }
 ngOnInIt(){
+  
 }
 searchQuery=''
 userData:any;

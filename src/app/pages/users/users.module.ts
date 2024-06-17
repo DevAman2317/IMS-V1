@@ -13,6 +13,7 @@ import { NotesComponent } from './notes/notes.component';
 import { ShowVideoComponent } from './show-video/show-video.component';
 import { SharedModule } from '../shared/shared.module';
 import { SubscribedCoursesComponent } from './subscribed-courses/subscribed-courses.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { SubscribedCoursesComponent } from './subscribed-courses/subscribed-cour
     CommonModule,
     UsersRoutingModule,
     RouterOutlet,
-    SharedModule
+    SharedModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class UsersModule { }

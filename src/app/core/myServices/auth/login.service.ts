@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule,HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -19,13 +19,14 @@ baseUrl=`https://developerschool-backend.onrender.com/`
 
   }
   
-  setToken(token:any, userRole:any){
+  setToken(token:any, userRole:any,user_id:any){
     localStorage.setItem('authToken',token); 
     localStorage.setItem('userRole',userRole);
+    localStorage.setItem('userId',user_id);
     
     return true;
     }
-    getToken(){
+    getToken(){ 
       localStorage.getItem('authToken')
       return true
     }

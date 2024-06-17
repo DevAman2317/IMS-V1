@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CoursesService } from 'src/app/core/myServices/courses/courses.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-admin-courses',
   templateUrl: './admin-courses.component.html',
@@ -9,10 +10,26 @@ import Swal from 'sweetalert2';
 })
 export class AdminCoursesComponent {
   constructor(private courses:CoursesService){
-    this.getCourses()
     
-
   }
+  
+
+
+
+  
+  ngOnInIt(){
+this.courses.getAllCourses().subscribe(
+  (res:any)=>
+    {
+      console.log(res)
+      this.coursesData=res.body
+    })
+    }
+
+
+
+
+
  
   addCourseForm=new FormGroup({
     course_name:new FormControl('',[Validators.required]),
@@ -30,16 +47,7 @@ export class AdminCoursesComponent {
 
   coursesData:any;
  
-  getCourses(){
-    this.courses.getAllCourses().subscribe((res:any)=>{
-      console.log(res);
-      this.coursesData=res.body
-      
-      console.log("this is coursesData",this.coursesData)
-    })
-
-   }
-
+  
    id:any;
    getCourseId(courseId:any){
     console.log(courseId,'--------------loij----------')
@@ -47,7 +55,7 @@ export class AdminCoursesComponent {
    }
 
    getCourseById(){
-    this.getCourseId(this.id)
+    // this.getCourseId(this.id)
     this.courses.getCourseById(this.id).subscribe((res:any)=>{
       console.log(res,'this is by id res');
       this.updateForm.patchValue(res.body)
@@ -55,6 +63,9 @@ export class AdminCoursesComponent {
    }
 
    updateCourse(){
+    
+
+
     this.courses.updateCourses(this.id,this.updateForm.value).subscribe((res)=>{
       console.log(res);
       Swal.fire({
